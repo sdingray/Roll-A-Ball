@@ -355,6 +355,7 @@
 "Assets/Scripts/CameraController.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/Rotator.cs"
+"Assets/Scripts/Timer.cs"
 -langversion:9.0
 
 /deterministic
