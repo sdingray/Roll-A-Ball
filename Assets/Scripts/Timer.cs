@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour
     {
         return currentTime;
     }
-    
+
     void Update()
     {
         if(isTiming == true)
