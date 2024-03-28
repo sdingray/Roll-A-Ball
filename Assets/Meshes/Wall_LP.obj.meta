@@ -3,7 +3,12 @@ guid: 457a6592f80535b4b9bc741df836d70e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wall_LPMat
+    second: {fileID: 2100000, guid: a16254ecdc48b094baa287ddbbe19fd2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

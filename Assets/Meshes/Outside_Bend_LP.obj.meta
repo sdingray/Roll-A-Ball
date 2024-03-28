@@ -3,7 +3,12 @@ guid: 905513c1699de2c4baed8e24a255f987
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Outside_Bend_LPMat
+    second: {fileID: 2100000, guid: e5d5009c109fdc34db9d09fcbc7f1f46, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
