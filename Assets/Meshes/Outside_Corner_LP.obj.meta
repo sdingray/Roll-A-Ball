@@ -3,7 +3,12 @@ guid: e34b9ed2428c1b846bfcd9b3d660754e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Outside_Corner_LPMat
+    second: {fileID: 2100000, guid: 7108de7113555124ca045fd858deb824, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
