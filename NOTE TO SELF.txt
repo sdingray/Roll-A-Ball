@@ -1,5 +1,11 @@
 
 
-1. move placement of first pick up - its too far out
-2. move placement of final pick up - i could touch it smh
-3. make build
+1. Retexture - kirbys epic yarn style, 
+2. speed ramps
+3. teleporter so it's less punishing
+4. speedrun timer
+5. free camera
+
+
+IDEAS: 
+- hazards eg. needles 

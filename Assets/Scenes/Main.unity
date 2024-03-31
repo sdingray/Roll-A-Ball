@@ -3216,6 +3216,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Outside_Bend_LP
       objectReference: {fileID: 0}
+    - target: {fileID: 3810067886747277127, guid: fd77f4c3c86ce8c4ea55cff4c8fd3b58, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4587976299825434109, guid: fd77f4c3c86ce8c4ea55cff4c8fd3b58, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
@@ -5734,7 +5738,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9171049691786163453, guid: 6aca662c213a900458877889ec8db8ee, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 9171049691786163453, guid: 6aca662c213a900458877889ec8db8ee, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7565,7 +7569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9171049691786163453, guid: 6aca662c213a900458877889ec8db8ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17
+      value: -18
       objectReference: {fileID: 0}
     - target: {fileID: 9171049691786163453, guid: 6aca662c213a900458877889ec8db8ee, type: 3}
       propertyPath: m_LocalPosition.z
