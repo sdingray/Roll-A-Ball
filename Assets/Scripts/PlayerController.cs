@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private bool gameOver = false;
 
     [Header("UI")]
+    public GameObject gameOverScreen;
     public TMP_Text pickUpText;
     public TMP_Text timerText;
     public TMP_Text winTimeText;
@@ -22,6 +23,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        //Game Over related
+        gameOverScreen.SetActive(false);
         //Turn on our in game panel
         inGamePanel.SetActive(true);
         //Turn off our win panel
@@ -81,7 +84,7 @@ public class PlayerController : MonoBehaviour
     void WinGame()
     {
         //Set our game over to true
-        gameOver = true;
+        gameOverScreen.SetActive(true);
         //Turn off our in game panel
         inGamePanel.SetActive(false);
         //Turn on our win panel
@@ -96,15 +99,5 @@ public class PlayerController : MonoBehaviour
         rb.angularVelocity = Vector3.zero;
     }
 
-    //Temporary - Remove when doing A2 modules
-    public void RestartGame()
-    {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
-    }
-
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
 
 }

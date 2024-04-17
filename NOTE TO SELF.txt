@@ -1,3 +1,15 @@
+THINGS TO DO
+- Retexture - Kirbys Epic Yarn style iel. natural Textures
+- Draw logo "Runaway Yarn" 
+	- In "Title" Scene, Add logo image to Images asset folder
+	- Change Image's Texture Type to Sprite
+	- Drag image to Canvas->Image, and resize as needed
+	- Change background to a flat colour by changing the Camera Clear Flag and Background settings
+
+
+THINGS I NEED HELP WITH 
+- 
+
 
 
 1. Retexture - kirbys epic yarn style, 
