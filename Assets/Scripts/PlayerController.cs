@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
         //Turn on our in game panel
         inGamePanel.SetActive(true);
         //Turn off our win panel
@@ -121,9 +122,9 @@ public class PlayerController : MonoBehaviour
         resetting = true;
         GetComponent<Renderer>().material.color = Color.black;
         rb.velocity = Vector3.zero;
-        Vector3 startPost = transform.position;
+        Vector3 startPos = transform.position;
         float resetSpeed = 2f;
-        var 1 = 0.0f;
+        var i = 0.0f;
         var rate = 1.0f / resetSpeed;
         while (i < 1.0f)
         {
