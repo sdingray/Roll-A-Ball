@@ -85,6 +85,8 @@ public class PlayerController : MonoBehaviour
     {
         if(other.tag == "Pick Up")
         {
+            //Particle related
+            other.GetComponent<Particles>().CreateParticles();
             //Destroy the collided object
             Destroy(other.gameObject);
             //Decrement the pick up count
@@ -113,8 +115,6 @@ public class PlayerController : MonoBehaviour
         inGamePanel.SetActive(false);
         //Stop the timer
         timer.StopTimer();
-        //Display our time to the win time text
-        winTimeText.text = "Your time was: " + timer.GetTime().ToString("F2");
 
         //Stop the ball from moving
         rb.velocity = Vector3.zero;

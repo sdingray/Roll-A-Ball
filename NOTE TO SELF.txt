@@ -1,6 +1,4 @@
 
-when u go home, delete library folder
-
 
 THINGS TO DO
 - Retexture - Kirbys Epic Yarn style iel. natural Textures
@@ -12,9 +10,9 @@ THINGS TO DO
 
 
 THINGS I NEED HELP WITH 
-- Countdown doesnt stop player from moving
--YOUR TIME text is overlapping with something
-- best time text panel needs to be adjusted
+- player can move whenever, despite end screen or countdown, 
+- timer starts with countdown start
+- when "replaying" level - everything shits itself
 
 
 
