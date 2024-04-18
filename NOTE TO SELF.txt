@@ -12,7 +12,11 @@ THINGS TO DO
 THINGS I NEED HELP WITH 
 - player can move whenever, despite end screen or countdown, 
 - timer starts with countdown start
-- when "replaying" level - everything shits itself
+- game shits itself in general when picking level from start screen, replaying etc
+- modifier text is crazy blurry???
+- World tilt still on when turn world tilt off in game controller
+- Wall hit sfx not playing, win sfx not playing
+
 
 
 

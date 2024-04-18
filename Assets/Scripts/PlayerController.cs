@@ -11,12 +11,14 @@ public class PlayerController : MonoBehaviour
     private int pickUpCount;
     GameObject resetPoint;
     bool resetting = false;
+    bool grounded = true;
     Color originalColour;
     private bool gameOver = false;
 
     //Controllers
     CameraController cameraController;
     GameController gameController;
+    SoundController soundController;
     Timer timer;
 
     [Header("UI")]
@@ -44,10 +46,12 @@ public class PlayerController : MonoBehaviour
         timer.StartTimer();
         //Reset Point stuff
         resetPoint = GameObject.Find("Reset Point");
-        gameController = FindObjectOfType<GameController>();
         originalColour = GetComponent<Renderer>().material.color;
-
+        
+        gameController = FindObjectOfType<GameController>();
         cameraController = FindObjectOfType<CameraController>();
+        soundController = FindObjectOfType<SoundController>();
+
 
         timer = FindObjectOfType<Timer>();
         if (gameController.gameType == GameType.SpeedRun)
@@ -96,6 +100,8 @@ public class PlayerController : MonoBehaviour
             pickUpCount--;
             //Run the Check Pick Ups function
             CheckPickUps();
+            //Sound related
+            soundController.PlayPickupSound();
         }
     }
 
@@ -118,6 +124,7 @@ public class PlayerController : MonoBehaviour
         inGamePanel.SetActive(false);
         //Stop the timer
         timer.StopTimer();
+        soundController.PlayWinSound();
 
         //Stop the ball from moving
         rb.velocity = Vector3.zero;
@@ -129,6 +136,11 @@ public class PlayerController : MonoBehaviour
         if(collision.gameObject.CompareTag("Respawn"))
         {
             StartCoroutine(ResetPlayer());
+        }
+
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            soundController.PlayCollisionSound(collision.gameObject);
         }
     }
 
