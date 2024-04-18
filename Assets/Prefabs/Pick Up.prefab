@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5636902322724331690}
   - component: {fileID: 6304780049669489517}
   - component: {fileID: 1388641945197894415}
+  - component: {fileID: 2938740027144215533}
   m_Layer: 0
   m_Name: Pick Up
   m_TagString: Pick Up
@@ -120,3 +121,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   rotationValue: {x: 20, y: 0, z: 0}
+--- !u!114 &2938740027144215533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 794184583223828787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89f205f7d80c4ac4daf605d2665a6fda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlePrefab: {fileID: 3421043008600045712, guid: 824a01655525fbd48a743276782c1ebc, type: 3}

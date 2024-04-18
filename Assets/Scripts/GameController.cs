@@ -1,11 +1,13 @@
 using UnityEngine;
 
 public enum GameType { Normal, SpeedRun }
+public enum ControlType { Normal, WorldTilt }
 
 public class GameController : MonoBehaviour
 {
     public static GameController instance;
     public GameType gameType;
+    public ControlType controlType;
 
     private void Awake()
     {
@@ -33,5 +35,14 @@ public class GameController : MonoBehaviour
             SetGameType(GameType.SpeedRun);
         else
             SetGameType(GameType.Normal);
+    }
+
+    //Toggles our control type between world tilt and Normal
+    public void ToggleWorldTilt(bool _tilt)
+    {
+        if (_tilt)
+            controlType = ControlType.WorldTilt;
+        else
+            controlType = ControlType.Normal;
     }
 }

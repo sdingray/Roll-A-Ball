@@ -44,11 +44,11 @@ public class PlayerController : MonoBehaviour
         timer.StartTimer();
         //Reset Point stuff
         resetPoint = GameObject.Find("Reset Point");
+        gameController = FindObjectOfType<GameController>();
         originalColour = GetComponent<Renderer>().material.color;
 
         cameraController = FindObjectOfType<CameraController>();
 
-        gameController = FindObjectOfType<GameController>();
         timer = FindObjectOfType<Timer>();
         if (gameController.gameType == GameType.SpeedRun)
             StartCoroutine(timer.StartCountdown());
@@ -57,6 +57,9 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         if (gameController.gameType == GameType.SpeedRun && !timer.IsTiming())
+            return;
+
+        if (gameController.controlType == ControlType.WorldTilt)
             return;
 
         if (resetting)

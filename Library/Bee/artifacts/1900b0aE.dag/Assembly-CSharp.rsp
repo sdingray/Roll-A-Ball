@@ -360,6 +360,7 @@
 "Assets/Scripts/Rotator.cs"
 "Assets/Scripts/SceneController.cs"
 "Assets/Scripts/SpeedRunToggleFix.cs"
+"Assets/Scripts/TiltControls.cs"
 "Assets/Scripts/Timer.cs"
 -langversion:9.0
 
