@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 1f;
+    [HideInInspector]
+    public float baseSpeed;
     private Rigidbody rb;
     private int pickUpCount;
     GameObject resetPoint;
@@ -31,6 +33,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        baseSpeed = speed;
         Time.timeScale = 1;
         //Turn on our in game panel
         inGamePanel.SetActive(true);
@@ -110,6 +113,13 @@ public class PlayerController : MonoBehaviour
             CheckPickUps();
             //Sound related
             soundController.PlayPickupSound();
+        }
+
+        if(other.gameObject.CompareTag("Powerup"))
+        {
+            other.GetComponent<Powerup>().UsePowerup();
+            other.gameObject.transform.position = Vector3.down * 1000;
+            //apparently this is wwhere you should add sound script
         }
     }
 
