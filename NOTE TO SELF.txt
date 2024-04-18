@@ -1,3 +1,7 @@
+
+when u go home, delete library folder
+
+
 THINGS TO DO
 - Retexture - Kirbys Epic Yarn style iel. natural Textures
 - Draw logo "Runaway Yarn" 

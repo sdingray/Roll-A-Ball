@@ -15,12 +15,14 @@ public class PlayerController : MonoBehaviour
     private Timer timer;
     private bool gameOver = false;
 
+    //Controllers
+    CameraController cameraController;
+
     [Header("UI")]
     public GameObject gameOverScreen;
     public TMP_Text pickUpText;
     public TMP_Text timerText;
     public TMP_Text winTimeText;
-    public GameObject winPanel;
     public GameObject inGamePanel;
     public Image pickUpSlider;
 
@@ -29,8 +31,6 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 1;
         //Turn on our in game panel
         inGamePanel.SetActive(true);
-        //Turn off our win panel
-        winPanel.SetActive(false);
         rb = GetComponent<Rigidbody>();
         //Get the number of pick ups in our scene
         pickUpCount = GameObject.FindGameObjectsWithTag("Pick Up").Length;
@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviour
         //Reset Point stuff
         resetPoint = GameObject.Find("Reset Point");
         originalColour = GetComponent<Renderer>().material.color;
+
+        cameraController = FindObjectOfType<CameraController>();
     }
 
     private void Update()
@@ -62,8 +64,16 @@ public class PlayerController : MonoBehaviour
 
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
-         
         Vector3 movement = new Vector3 (moveHorizontal, 0, moveVertical);
+
+        if(cameraController.cameraStyle == CameraStyle.Free)
+        {
+            //rotates the player to the direction of the camera
+            transform.eulerAngles = Camera.main.transform.eulerAngles;
+            //Translates the input vectors into coordinates
+            movement = transform.TransformDirection(movement);
+        }
+
         rb.AddForce(movement * speed);
     }
 
@@ -97,8 +107,6 @@ public class PlayerController : MonoBehaviour
         gameOverScreen.SetActive(true);
         //Turn off our in game panel
         inGamePanel.SetActive(false);
-        //Turn on our win panel
-        winPanel.SetActive(true);
         //Stop the timer
         timer.StopTimer();
         //Display our time to the win time text
