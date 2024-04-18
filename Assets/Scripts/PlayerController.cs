@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
 
     //Controllers
     CameraController cameraController;
+    GameController gameController;
+    Timer timer;
 
     [Header("UI")]
     public GameObject gameOverScreen;
@@ -46,15 +48,18 @@ public class PlayerController : MonoBehaviour
         originalColour = GetComponent<Renderer>().material.color;
 
         cameraController = FindObjectOfType<CameraController>();
-    }
 
-    private void Update()
-    {
-        timerText.text = "Time: " + timer.GetTime().ToString("F2");
+        gameController = FindObjectOfType<GameController>();
+        timer = FindObjectOfType<Timer>();
+        if (gameController.gameType == GameType.SpeedRun)
+            StartCoroutine(timer.StartCountdown());
     }
-
+    
     void FixedUpdate()
     {
+        if (gameController.gameType == GameType.SpeedRun && !timer.IsTiming())
+            return;
+
         if (resetting)
             return;
 
