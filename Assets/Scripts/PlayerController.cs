@@ -69,6 +69,14 @@ public class PlayerController : MonoBehaviour
         if (resetting)
             return;
 
+        if (grounded)
+        {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
+            Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+            rb.AddForce(movement * speed);
+        }
+
         if (gameOver == true)
             return;
 
@@ -142,6 +150,18 @@ public class PlayerController : MonoBehaviour
         {
             soundController.PlayCollisionSound(collision.gameObject);
         }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if(collision.collider.CompareTag("Ground"))
+            grounded = true;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.collider.CompareTag("Ground"))
+            grounded = false;
     }
 
     public IEnumerator ResetPlayer()

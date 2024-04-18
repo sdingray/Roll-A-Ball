@@ -1,13 +1,5 @@
 
 
-THINGS TO DO
-- Retexture - Kirbys Epic Yarn style iel. natural Textures
-- Draw logo "Runaway Yarn" 
-	- In "Title" Scene, Add logo image to Images asset folder
-	- Change Image's Texture Type to Sprite
-	- Drag image to Canvas->Image, and resize as needed
-	- Change background to a flat colour by changing the Camera Clear Flag and Background settings
-
 
 THINGS I NEED HELP WITH 
 - player can move whenever, despite end screen or countdown, 
@@ -19,13 +11,3 @@ THINGS I NEED HELP WITH
 
 
 
-
-1. Retexture - kirbys epic yarn style, 
-2. speed ramps
-3. teleporter so it's less punishing
-4. speedrun timer
-5. free camera
-
-
-IDEAS: 
-- hazards eg. needles 
