@@ -16,7 +16,8 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         //The offset of the pivot from the player
-        pivotOffset = pivot.position - player.transform.position;
+        pivotOffset = pivot.position - player.transform.position
+            ;
         //The offset from the player
         offset = transform.position - player.transform.position;
     }

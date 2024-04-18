@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     GameObject resetPoint;
     bool resetting = false;
     Color originalColour;
-    private Timer timer;
     private bool gameOver = false;
 
     //Controllers

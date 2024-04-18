@@ -12,7 +12,9 @@ THINGS TO DO
 
 
 THINGS I NEED HELP WITH 
-- 
+- Countdown doesnt stop player from moving
+-YOUR TIME text is overlapping with something
+- best time text panel needs to be adjusted
 
 
 
