@@ -46,7 +46,6 @@ public class PlayerController : MonoBehaviour
         gameOverScreen.SetActive(false);
         //Get the timer object and start the timer
         timer = FindObjectOfType<Timer>();
-        timer.StartTimer();
         //Reset Point stuff
         resetPoint = GameObject.Find("Reset Point");
         originalColour = GetComponent<Renderer>().material.color;
@@ -77,6 +76,15 @@ public class PlayerController : MonoBehaviour
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
             Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
+            
+            if(cameraController.cameraStyle == CameraStyle.Free)
+            {
+                //rotates the player to the direction of the camera
+                transform.eulerAngles = Camera.main.transform.eulerAngles;
+                //Translates the input vectors into coordinates
+                movement = transform.TransformDirection(movement);
+            }
+
             rb.AddForce(movement * speed);
         }
 
@@ -84,19 +92,7 @@ public class PlayerController : MonoBehaviour
             return;
 
 
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3 (moveHorizontal, 0, moveVertical);
 
-        if(cameraController.cameraStyle == CameraStyle.Free)
-        {
-            //rotates the player to the direction of the camera
-            transform.eulerAngles = Camera.main.transform.eulerAngles;
-            //Translates the input vectors into coordinates
-            movement = transform.TransformDirection(movement);
-        }
-
-        rb.AddForce(movement * speed);
     }
 
     private void OnTriggerEnter(Collider other)

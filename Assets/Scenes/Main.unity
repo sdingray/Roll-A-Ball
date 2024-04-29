@@ -4609,6 +4609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
+  baseSpeed: 0
   gameOverScreen: {fileID: 1583290805}
   pickUpText: {fileID: 99950969}
   timerText: {fileID: 1226036519}
@@ -4936,7 +4937,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.43013275, y: -0, z: -0, w: 0.90276563}
-  m_LocalPosition: {x: 0, y: 16, z: -18}
+  m_LocalPosition: {x: 0, y: 20, z: -21}
   m_LocalScale: {x: 0.94697, y: 0.94697, z: 0.94697}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9524,7 +9525,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1984551716}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ffcc4c0b3c4db046836781583165549, type: 3}
   m_Name: 
