@@ -18,9 +18,9 @@ public class Powerup : MonoBehaviour
 
     public void UsePowerup()
     {
-        //If this powerup is the speedup powerup, increase the player controller speed by double
+        //If this powerup is the speedup powerup, increase the player controller speed by double (I MADE IT 10)
         if (myPowerup == PowerupType.SpeedUp)
-            playerController.speed = playerController.baseSpeed * 2;
+            playerController.speed = playerController.baseSpeed * 10;
 
         //If this powerup is the speeddown powerup, decrease the player controller speed times 3
         if (myPowerup == PowerupType.SpeedDown)

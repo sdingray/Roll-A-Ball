@@ -2,12 +2,11 @@
 
 
 THINGS I NEED HELP WITH 
-- player can move whenever, despite end screen or countdown, 
-- timer starts with countdown start
-- game shits itself in general when picking level from start screen, replaying etc
+
+- when picking level from start screen, levels break
 - modifier text is crazy blurry???
-- World tilt still on when turn world tilt off in game controller
 - Wall hit sfx not playing, win sfx not playing
+- player is super fast sideways but not forwards/backwards
 
 
 
