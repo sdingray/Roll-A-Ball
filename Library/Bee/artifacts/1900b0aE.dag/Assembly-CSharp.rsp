@@ -355,6 +355,7 @@
 "Assets/Scripts/Booster.cs"
 "Assets/Scripts/CameraController.cs"
 "Assets/Scripts/GameController.cs"
+"Assets/Scripts/KillParticles.cs"
 "Assets/Scripts/Particles.cs"
 "Assets/Scripts/Pause.cs"
 "Assets/Scripts/PlayerController.cs"

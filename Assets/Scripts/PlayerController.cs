@@ -62,6 +62,9 @@ public class PlayerController : MonoBehaviour
     
     void FixedUpdate()
     {
+        if (gameOver == true)
+            return;
+
         if (gameController.gameType == GameType.SpeedRun && !timer.IsTiming())
             return;
 
@@ -76,22 +79,16 @@ public class PlayerController : MonoBehaviour
             float moveHorizontal = Input.GetAxis("Horizontal");
             float moveVertical = Input.GetAxis("Vertical");
             Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-            
-            if(cameraController.cameraStyle == CameraStyle.Free)
+            rb.AddForce(movement * speed);
+
+            if (cameraController.cameraStyle == CameraStyle.Free)
             {
                 //rotates the player to the direction of the camera
                 transform.eulerAngles = Camera.main.transform.eulerAngles;
                 //Translates the input vectors into coordinates
                 movement = transform.TransformDirection(movement);
             }
-
-            rb.AddForce(movement * speed);
         }
-
-        if (gameOver == true)
-            return;
-
-
 
     }
 
@@ -105,10 +102,10 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
             //Decrement the pick up count
             pickUpCount--;
-            //Run the Check Pick Ups function
-            CheckPickUps();
             //Sound related
             soundController.PlayPickupSound();
+            //Run the Check Pick Ups function
+            CheckPickUps();
         }
 
         if(other.gameObject.CompareTag("Powerup"))
@@ -147,13 +144,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        //print(collision.gameObject.name);
         if(collision.gameObject.CompareTag("Respawn"))
         {
             StartCoroutine(ResetPlayer());
         }
 
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Walls"))
         {
+            print("Collide with wall");
             soundController.PlayCollisionSound(collision.gameObject);
         }
     }

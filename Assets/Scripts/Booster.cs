@@ -11,6 +11,7 @@ public class Booster : MonoBehaviour
    {
 	   if(other.CompareTag("Player"))
 	   {
+			print("Jump!");
 		   other.attachedRigidbody.AddForce(boostDirection * boostPower);
 		   //if adding sound, it goes here
 	   }

@@ -42,6 +42,7 @@ public class Timer : MonoBehaviour
 
     public IEnumerator StartCountdown()
     {
+        print("Countdown Start");
         yield return new WaitForEndOfFrame();
         if (PlayerPrefs.HasKey("Best Time"))
             bestTime = PlayerPrefs.GetFloat("BestTime" + sceneController.GetSceneName());

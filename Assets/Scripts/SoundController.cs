@@ -32,6 +32,7 @@ public class SoundController : MonoBehaviour
 
 	public void PlayCollisionSound(GameObject _go)
 	{
+		print("Wall Collided");
 		//Check to see if the collided object has an Audiosource.
 		//This is a failsafe in case we forgot to attach one to our wall
 		if (_go.GetComponent<AudioSource>() != null)

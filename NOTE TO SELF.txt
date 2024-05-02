@@ -3,8 +3,6 @@
 
 THINGS I NEED HELP WITH 
 
-- when picking level from start screen, levels break
-- modifier text is crazy blurry???
 - Wall hit sfx not playing, win sfx not playing
 - player is super fast sideways but not forwards/backwards
 
